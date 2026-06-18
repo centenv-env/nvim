@@ -55,15 +55,6 @@ return {
           show_on_blocked_trigger_characters = { ' ', '\n', '\t' }
         }
       },
-      cmdline = {
-        keymap = {
-          preset = "super-tab",
-          ["<CR>"] = { "select_and_accept", "fallback"},
-          ["<Esc>"] = { "hide", "fallback" },
-          ["<C-j>"] = { "select_next", "fallback" },
-          ["<C-k>"] = { "select_prev", "fallback" },
-        },
-      },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
