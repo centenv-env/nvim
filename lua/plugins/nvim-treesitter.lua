@@ -4,9 +4,6 @@ return {
   branch = "main",
   lazy = false,
   config = function()
-      -- ensure basic parser are installed
-      require('nvim-treesitter').install(require("languages").default_parsers)
-
       ---@param buf integer
       ---@param language string
       local function treesitter_try_attach(buf, language)

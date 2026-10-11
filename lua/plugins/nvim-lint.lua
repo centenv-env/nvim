@@ -3,7 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   enabled = false,
   config = function()
-    require("languages").load_linters()
+    -- require("languages").load_linters()
     vim.api.nvim_create_autocmd(
       { "BufEnter", "BufWritePost", "InsertLeave", "TextChanged" },
       {
