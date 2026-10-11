@@ -1,6 +1,8 @@
 ----- [[ CentenVim ]] -----
 -- CentenV's custom Neovim configuration
 
+local auto_install_lsps = false
+
 -- WARNING: !!!
 -- This file contains configurations that are backbone to the customization of Neovim.
 -- Parameters that potentially/are subject to be changed are stored in core.options
@@ -120,18 +122,6 @@ require("lazy").setup({
 })
 
 
--- [[ Language Configurations ]] --
--- Ensure all LSPs, DAPs, Linters, Formatters are installed
-require("mason-tool-installer").setup {
-  ensure_installed = require("languages").ensure_installed,
-  automatic_installation = true,
-  auto_update = true,
-}
--- Load all language configurations
-require("languages").load_languages()
-require("languages").load_dap_configs()
--- require("languages").load_linters()
-
 -- [[ UI Defaults ]] --
 -- Load default theme
 vim.cmd("colorscheme carbonfox")
@@ -141,3 +131,11 @@ require("core.statusline")
 -- Load custom configurations
 require("core.options")
 require("core.keymaps")
+
+-- [[ Language Configurations ]] --
+-- Ensure all LSPs, DAPs, Linters, Formatters are installed
+require("mason-tool-installer").setup {
+  ensure_installed = require("languages").lsps,
+  run_on_start = auto_install_lsps,
+}
+require("languages")

@@ -17,7 +17,7 @@ return {
       },
     },
     -- Load language specific adapters
-    require("languages").dap_lang_plugins,
+    -- require("languages").dap_lang_plugins,
   },
   config = function()
     -- DAP/DAP UI configuration
