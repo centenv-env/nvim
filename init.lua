@@ -1,7 +1,7 @@
 ----- [[ CentenVim ]] -----
 -- CentenV's custom Neovim configuration
 
-local auto_install_lsps = true
+local auto_install_lsps = false
 
 -- WARNING: !!!
 -- This file contains configurations that are backbone to the customization of Neovim.
